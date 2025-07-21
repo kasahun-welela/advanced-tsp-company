@@ -8,9 +8,10 @@ import {
   NavigationMenuContent,
   NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
-import { Button } from "@/components/ui/button";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -36,8 +37,31 @@ const NavBar = () => {
     { name: "Get IT support", href: "/get-it-support" },
   ];
 
+  const mobileMenuVariants = {
+    open: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 20,
+        duration: 0.5,
+      },
+    },
+    closed: {
+      opacity: 0,
+      x: -400,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 20,
+        duration: 0.5,
+      },
+    },
+  };
+
   return (
-    <nav className="w-full  z-50 relative">
+    <nav className="w-full z-50 relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between py-4 items-center ">
           <div className="flex-shrink-0 text-xl font-bold">TSP Company</div>
@@ -59,7 +83,11 @@ const NavBar = () => {
                     </NavigationMenuItem>
                   ) : (
                     <NavigationMenuItem key={link.name}>
-                      <NavigationMenuTrigger className="px-4 py-2 text-sm font-medium">
+                      <NavigationMenuTrigger
+                        className={`px-4 py-2 text-sm font-medium hover:text-primary transition-colors ${
+                          pathname === link.href ? "text-primary" : ""
+                        }`}
+                      >
                         {link.name}
                       </NavigationMenuTrigger>
                       <NavigationMenuContent className="md:w-[200px] lg:w-[300px]">
@@ -68,7 +96,9 @@ const NavBar = () => {
                             <NavigationMenuLink
                               key={sublink.name}
                               href={sublink.href}
-                              className="px-4 py-2 text-sm rounded hover:bg-accent hover:text-accent-foreground transition-colors"
+                              className={`px-4 py-2 text-sm rounded hover:bg-accent hover:text-accent-foreground transition-colors ${
+                                pathname === sublink.href ? "text-primary" : ""
+                              }`}
                             >
                               {sublink.name}
                             </NavigationMenuLink>
@@ -83,98 +113,85 @@ const NavBar = () => {
           </div>
           {/* Mobile Navigation */}
           <div className="md:hidden flex items-center">
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={() => setMenuOpen(!menuOpen)}
-              aria-label="Open main menu"
-            >
-              <svg
-                className="block h-6 w-6"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                {menuOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                )}
-              </svg>
-            </Button>
+            {menuOpen ? (
+              <X className="text-2xl" onClick={() => setMenuOpen(false)} />
+            ) : (
+              <Menu className="text-2xl" onClick={() => setMenuOpen(true)} />
+            )}
           </div>
         </div>
       </div>
       {/* Mobile menu */}
-      {menuOpen && (
-        <div className="md:hidden" id="mobile-menu">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background border-t border-border">
-            {navLinks.map((link) =>
-              !link.submenu ? (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className={`block text-foreground hover:text-primary-foreground transition-colors px-3 py-2 rounded-md text-base font-medium ${
-                    pathname === link.href ? "text-primary" : ""
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ) : (
-                <div key={link.name} className="block">
-                  <button
-                    onClick={() => setServicesOpen((open) => !open)}
-                    className="w-full flex items-center justify-between text-foreground hover:text-primary-foreground transition-colors px-3 py-2 rounded-md text-base font-medium"
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            className="md:hidden fixed top-0 left-0 w-3/4 max-w-xs h-full bg-background shadow-lg z-50"
+            id="mobile-menu"
+            variants={mobileMenuVariants}
+            initial="closed"
+            animate="open"
+            exit="closed"
+          >
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-border mt-16">
+              {navLinks.map((link) =>
+                !link.submenu ? (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className={`block text-foreground hover:text-primary-foreground transition-colors px-3 py-2 rounded-md text-base font-medium ${
+                      pathname === link.href ? "text-primary" : ""
+                    }`}
+                    onClick={() => setMenuOpen(false)}
                   >
                     {link.name}
-                    <svg
-                      className={`w-4 h-4 ml-1 transform transition-transform duration-200 ${
-                        servicesOpen ? "rotate-180" : "rotate-0"
-                      }`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
+                  </Link>
+                ) : (
+                  <div key={link.name} className="block">
+                    <button
+                      onClick={() => setServicesOpen((open) => !open)}
+                      className="w-full flex items-center justify-between text-foreground hover:text-primary-foreground transition-colors px-3 py-2 rounded-md text-base font-medium"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </button>
-                  {servicesOpen && (
-                    <div className="pl-4">
-                      {link.submenu.map((sublink) => (
-                        <Link
-                          key={sublink.name}
-                          href={sublink.href}
-                          className="block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-primary-foreground transition-colors"
-                        >
-                          {sublink.name}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              )
-            )}
-          </div>
-        </div>
-      )}
+                      {link.name}
+                      <svg
+                        className={`w-4 h-4 ml-1 transform transition-transform duration-200 ${
+                          servicesOpen ? "rotate-180" : "rotate-0"
+                        }`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+                    {servicesOpen && (
+                      <div className="pl-4">
+                        {link.submenu.map((sublink) => (
+                          <Link
+                            key={sublink.name}
+                            href={sublink.href}
+                            className={`block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-primary-foreground transition-colors ${
+                              pathname === sublink.href ? "text-primary" : ""
+                            }`}
+                            onClick={() => setMenuOpen(false)}
+                          >
+                            {sublink.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )
+              )}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
