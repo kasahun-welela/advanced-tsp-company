@@ -11,7 +11,7 @@ import {
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, ChevronUp, Menu, X } from "lucide-react";
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -42,7 +42,7 @@ const NavBar = () => {
       opacity: 1,
       x: 0,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 100,
         damping: 20,
         duration: 0.5,
@@ -52,7 +52,7 @@ const NavBar = () => {
       opacity: 0,
       x: -400,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 100,
         damping: 20,
         duration: 0.5,
@@ -96,7 +96,7 @@ const NavBar = () => {
                             <NavigationMenuLink
                               key={sublink.name}
                               href={sublink.href}
-                              className={`px-4 py-2 text-sm rounded hover:bg-accent hover:text-accent-foreground transition-colors ${
+                              className={`px-4 py-2 text-sm rounded hover:bg-primary/10 hover:text-primary transition-colors ${
                                 pathname === sublink.href ? "text-primary" : ""
                               }`}
                             >
@@ -113,11 +113,13 @@ const NavBar = () => {
           </div>
           {/* Mobile Navigation */}
           <div className="md:hidden flex items-center">
-            {menuOpen ? (
-              <X className="text-2xl" onClick={() => setMenuOpen(false)} />
-            ) : (
-              <Menu className="text-2xl" onClick={() => setMenuOpen(true)} />
-            )}
+            <button onClick={() => setMenuOpen(!menuOpen)}>
+              {menuOpen ? (
+                <X className="text-2xl" />
+              ) : (
+                <Menu className="text-2xl" />
+              )}
+            </button>
           </div>
         </div>
       </div>
@@ -152,7 +154,7 @@ const NavBar = () => {
                       className="w-full flex items-center justify-between text-foreground hover:text-primary-foreground transition-colors px-3 py-2 rounded-md text-base font-medium"
                     >
                       {link.name}
-                      <svg
+                      {/* <svg
                         className={`w-4 h-4 ml-1 transform transition-transform duration-200 ${
                           servicesOpen ? "rotate-180" : "rotate-0"
                         }`}
@@ -167,7 +169,20 @@ const NavBar = () => {
                           strokeWidth={2}
                           d="M19 9l-7 7-7-7"
                         />
-                      </svg>
+                      </svg> */}
+                      {servicesOpen ? (
+                        <ChevronUp
+                          className={`w-4 h-4 ml-1 transform transition-transform duration-200 ${
+                            servicesOpen ? "rotate-180" : "rotate-0"
+                          }`}
+                        />
+                      ) : (
+                        <ChevronDown
+                          className={`w-4 h-4 ml-1 transform transition-transform duration-200 ${
+                            servicesOpen ? "rotate-180" : "rotate-0"
+                          }`}
+                        />
+                      )}
                     </button>
                     {servicesOpen && (
                       <div className="pl-4">
@@ -175,7 +190,7 @@ const NavBar = () => {
                           <Link
                             key={sublink.name}
                             href={sublink.href}
-                            className={`block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-primary-foreground transition-colors ${
+                            className={`block px-4 py-2 text-sm text-foreground hover:bg-primary/10 hover:text-primary transition-colors ${
                               pathname === sublink.href ? "text-primary" : ""
                             }`}
                             onClick={() => setMenuOpen(false)}
