@@ -11,12 +11,14 @@ import {
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDown, ChevronUp, Menu, X } from "lucide-react";
+import { ChevronDown, ChevronUp, Menu, Moon, Sun, X } from "lucide-react";
+import { useTheme } from "next-themes";
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const pathname = usePathname();
+  const { theme, setTheme } = useTheme();
 
   const closeMenu = () => {
     setMenuOpen(false);
@@ -119,16 +121,16 @@ const NavBar = () => {
               </NavigationMenuList>
             </NavigationMenu>
           </div>
-          {/* Mobile Navigation */}
-          {/* <div className="md:hidden flex items-center">
-            <button onClick={() => setMenuOpen(!menuOpen)}>
-              {menuOpen ? (
-                <X className="text-2xl" />
-              ) : (
-                <Menu className="text-2xl" />
-              )}
-            </button>
-          </div> */}
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="text-2xl"
+          >
+            {theme === "dark" ? (
+              <Sun className="text-2xl" />
+            ) : (
+              <Moon className="text-2xl" />
+            )}
+          </button>
         </div>
       </div>
       {/* Mobile Navigation */}
@@ -136,6 +138,17 @@ const NavBar = () => {
         <Link href="/">
           <span className="text-xl font-bold">TSP Company</span>
         </Link>
+
+        <button
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          className="text-2xl"
+        >
+          {theme === "dark" ? (
+            <Sun className="text-2xl" />
+          ) : (
+            <Moon className="text-2xl" />
+          )}
+        </button>
 
         <div className="md:hidden flex items-center">
           <button onClick={() => setMenuOpen(!menuOpen)}>

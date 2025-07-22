@@ -3,8 +3,8 @@ import Link from "next/link";
 
 function NotFound() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 p-4">
-      <div className="bg-white rounded-xl shadow-lg flex flex-col items-center px-8 py-12 max-w-md w-full">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 dark:from-slate-900 dark:to-slate-800 p-4">
+      <div className="bg-card text-card-foreground rounded-xl shadow-lg flex flex-col items-center px-8 py-12 max-w-md w-full ">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -28,10 +28,8 @@ function NotFound() {
           <circle cx="40" cy="45" r="4" fill="currentColor" />
           <circle cx="60" cy="45" r="4" fill="currentColor" />
         </svg>
-        <h1 className="text-4xl font-extrabold text-gray-800 mb-2 text-center">
-          404
-        </h1>
-        <h2 className="text-xl font-semibold text-gray-600 mb-2 text-center">
+        <h1 className="text-4xl font-extrabold  mb-2 text-center">404</h1>
+        <h2 className="text-xl font-semibold mb-2 text-center">
           Page Not Found
         </h2>
         <p className="text-gray-500 mb-6 text-center">

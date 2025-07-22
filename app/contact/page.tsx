@@ -1,4 +1,5 @@
 import Contact from "@/components/Contact";
+import { Card } from "@/components/ui/card";
 import { Mail, MapPin, Phone } from "lucide-react";
 
 function ContactUs() {
@@ -25,14 +26,12 @@ function ContactUs() {
   return (
     <section
       id="contact"
-      className="py-20 bg-gradient-to-br from-gray-50 to-blue-50"
+      className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-slate-900 dark:to-slate-800"
     >
       <div className="container lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl lg:text-5xl font-bold text-gray-900">
-            Get In Touch
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-3xl lg:text-5xl font-bold ">Get In Touch</h2>
+          <p className="text-xl  max-w-3xl mx-auto">
             Ready to start your next project? Contact us today to discuss how we
             can help transform your business with technology.
           </p>
@@ -40,20 +39,16 @@ function ContactUs() {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="bg-white rounded-xl p-8 shadow-lg">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">
-              Send us a message
-            </h3>
+          <Card className="rounded-xl p-8 shadow-lg">
+            <h3 className="text-2xl font-bold  mb-6">Send us a message</h3>
 
             <Contact />
-          </div>
+          </Card>
 
           {/* Contact Information */}
           <div className="space-y-8">
-            <div className="bg-white rounded-xl p-8 shadow-lg">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Contact Information
-              </h3>
+            <Card className="rounded-xl p-8 shadow-lg">
+              <h3 className="text-2xl font-bold  mb-6">Contact Information</h3>
 
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
@@ -74,7 +69,7 @@ function ContactUs() {
                   </a>
                 ))}
               </div>
-            </div>
+            </Card>
 
             {/* <div className="bg-white rounded-xl p-8 shadow-lg">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
