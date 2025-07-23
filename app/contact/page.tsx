@@ -55,16 +55,18 @@ function ContactUs() {
                   <a
                     key={index}
                     href={info.link}
-                    className="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-50 transition-colors group"
+                    className="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group"
                   >
                     <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
                       <info.icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 group-hover:text-blue-600">
+                      <h4 className="font-semibold text-gray-900 dark:text-white group-hover:text-blue-600">
                         {info.label}
                       </h4>
-                      <p className="text-gray-600">{info.value}</p>
+                      <p className="text-gray-600 dark:text-gray-50">
+                        {info.value}
+                      </p>
                     </div>
                   </a>
                 ))}
