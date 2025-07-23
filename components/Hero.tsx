@@ -1,8 +1,13 @@
-// import { PhoneIcon, ChartNoAxesCombined } from "lucide-react";
-import { PhoneIcon } from "lucide-react";
+import {
+  PhoneIcon,
+  ChartNoAxesCombined,
+  Pencil,
+  Monitor,
+  CloudCog,
+} from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
-// import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Hero = () => {
   return (
@@ -36,21 +41,158 @@ const Hero = () => {
           </div>
         </div>
       </section>
-      {/* <section className="container mx-auto px-4 sm:px-6 lg:px-8 bg-slate-950 -mt-20 ">
-        <Tabs defaultValue="assess" className="w-[400px]">
-          <TabsList>
-            <TabsTrigger value="assess">
-              <ChartNoAxesCombined className="w-4 h-4" />
+      <section className="container mx-auto px-6 lg:px-8 bg-slate-950  -mt-20">
+        <Tabs defaultValue="assess" className="w-full py-3">
+          <TabsList className="grid grid-cols-2 md:grid-cols-4">
+            <TabsTrigger
+              className="text-white py-4 px-4 md:py-6 md:px-6 md:text-2xl border border-slate-500 hover:bg-primary/80"
+              value="assess"
+            >
+              <ChartNoAxesCombined className="w-7 h-7 mr-3" />
               Assess
             </TabsTrigger>
-            <TabsTrigger value="password">Password Management</TabsTrigger>
+            <TabsTrigger
+              className="text-white  py-4 px-4 md:py-6 md:px-6  md:text-2xl border border-slate-500 hover:bg-primary/80"
+              value="design"
+            >
+              <Pencil className="w-7 h-7 mr-3" />
+              Design
+            </TabsTrigger>
+            <TabsTrigger
+              className="text-white  py-4 px-4 md:py-6 md:px-6  md:text-2xl border border-slate-500 hover:bg-primary/80"
+              value="deploy"
+            >
+              <CloudCog className="w-7 h-7 mr-3" />
+              Deploy
+            </TabsTrigger>
+            <TabsTrigger
+              className="text-white  py-4 px-4 md:py-6 md:px-6  md:text-2xl border border-slate-500 hover:bg-primary/80"
+              value="manage"
+            >
+              <Monitor className="w-7 h-7 mr-3" />
+              Manage
+            </TabsTrigger>
           </TabsList>
-          <TabsContent value="account">
-            Make changes to your account here.
+          <TabsContent value="assess">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-10 py-10">
+              <div className="flex flex-col gap-2">
+                <hr className="border-slate-500" />
+                <p className="text-xl md:text-end text-gray-400">Step 1</p>
+                <h2 className="text-2xl font-bold uppercase md:text-end text-white">
+                  Assess
+                </h2>
+              </div>
+              <div className="col-span-2">
+                <p className="text-gray-400 text-lg">
+                  The first step is to assess the situation and truly diagnose
+                  the issue. We take the time to listen to your symptoms and
+                  what pain points you have. Some problems are bigger than
+                  others but, all of them are fixable. Let us find a solution
+                  and not a cheap fix for today.
+                </p>
+              </div>
+              <div className="flex flex-col gap-2">
+                <hr className="border-slate-500" />
+                <Link
+                  href="/contact"
+                  className=" text-2xl font-bold uppercase text-white"
+                >
+                  Lets's chat
+                </Link>
+              </div>
+            </div>
           </TabsContent>
-          <TabsContent value="password">Change your password here.</TabsContent>
+          <TabsContent value="design">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-10 py-10">
+              <div className="flex flex-col gap-2">
+                <hr className="border-slate-500" />
+                <p className="text-xl md:text-end text-gray-400">Step 2</p>
+                <h2 className="text-2xl font-bold uppercase md:text-end text-white">
+                  Design
+                </h2>
+              </div>
+              <div className="col-span-2">
+                <p className="text-gray-400 text-lg">
+                  Once the problem is diagnosed, its time to curate a properly
+                  designed solution to eliminate the pain points. We always
+                  strive for a solution that will ensure minimal to zero risk in
+                  the long-term. No one hopes for a fix today that causes a
+                  problem tomorrow. A true solution is our philosophy from the
+                  beginning.
+                </p>
+              </div>
+              <div className="flex flex-col gap-2">
+                <hr className="border-slate-500" />
+                <Link
+                  href="/contact"
+                  className=" text-2xl font-bold uppercase text-white"
+                >
+                  Lets's chat
+                </Link>
+              </div>
+            </div>
+          </TabsContent>
+          <TabsContent value="deploy">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-10 py-10">
+              <div className="flex flex-col gap-2">
+                <hr className="border-slate-500" />
+                <p className="text-xl md:text-end text-gray-400">Step 3</p>
+                <h2 className="text-2xl font-bold uppercase md:text-end text-white">
+                  Deploy
+                </h2>
+              </div>
+              <div className="col-span-2">
+                <p className="text-gray-400 text-lg">
+                  We take the time to accurately deploy your customized solution
+                  to your network, and make sure that everyone in your
+                  organization is informed. A successful IT environment requires
+                  thought, preciseness, expertise and patience — which is
+                  exactly what we offer you as your technology partner.
+                </p>
+              </div>
+              <div className="flex flex-col gap-2">
+                <hr className="border-slate-500" />
+                <Link
+                  href="/contact"
+                  className=" text-2xl font-bold uppercase text-white"
+                >
+                  Lets's chat
+                </Link>
+              </div>
+            </div>
+          </TabsContent>
+          <TabsContent value="manage">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-10 py-10">
+              <div className="flex flex-col gap-2">
+                <hr className="border-slate-500" />
+                <p className="text-xl md:text-end text-gray-400">Step 4</p>
+                <h2 className="text-2xl font-bold uppercase md:text-end text-white">
+                  Manage
+                </h2>
+              </div>
+              <div className="col-span-2">
+                <p className="text-gray-400 text-lg">
+                  Proper maintenance is key to the integrity of anything,
+                  especially your business&apos;s IT solutions. We manage your
+                  IT environment to ensure all needs are met continuously and
+                  your business and employees stay up and running. We stay
+                  proactive in communication, mitigation and updates so your
+                  business continues on a smooth path.
+                </p>
+              </div>
+              <div className="flex flex-col gap-2">
+                <hr className="border-slate-500" />
+                <Link
+                  href="/contact"
+                  className=" text-2xl font-bold uppercase text-white"
+                >
+                  Lets's chat
+                </Link>
+              </div>
+            </div>
+          </TabsContent>
         </Tabs>
-      </section> */}
+      </section>
     </>
   );
 };
