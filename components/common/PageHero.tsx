@@ -13,7 +13,9 @@ function PageHero({
   return (
     <section className="relative md:mt-16 w-full h-96 flex items-center justify-center overflow-hidden">
       {/* Background image layer */}
-      <div className="absolute inset-0 bg-[url('/images/about.jpg')] bg-cover bg-center bg-no-repeat opacity-40"></div>
+      <div className="absolute inset-0 bg-[url('/images/about.jpg')] bg-cover bg-center bg-no-repeat"></div>
+      {/* Overlay layer */}
+      <div className="absolute inset-0 bg-black/40"></div>
       {/* Content layer */}
       <div className="relative text-center px-4 sm:px-6 lg:px-8 z-10">
         <h1 className="text-4xl font-extrabold text-white mt-4 uppercase">
