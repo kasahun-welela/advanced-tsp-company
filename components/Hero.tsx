@@ -97,7 +97,7 @@ const Hero = () => {
                   href="/contact"
                   className=" text-2xl font-bold uppercase text-white"
                 >
-                  Lets's chat
+                  Lets&apos;s chat
                 </Link>
               </div>
             </div>
@@ -127,7 +127,7 @@ const Hero = () => {
                   href="/contact"
                   className=" text-2xl font-bold uppercase text-white"
                 >
-                  Lets's chat
+                  Lets&apos;s chat
                 </Link>
               </div>
             </div>
@@ -156,7 +156,7 @@ const Hero = () => {
                   href="/contact"
                   className=" text-2xl font-bold uppercase text-white"
                 >
-                  Lets's chat
+                  Lets&apos;s chat
                 </Link>
               </div>
             </div>
@@ -186,7 +186,7 @@ const Hero = () => {
                   href="/contact"
                   className=" text-2xl font-bold uppercase text-white"
                 >
-                  Lets's chat
+                  Lets&apos;s chat
                 </Link>
               </div>
             </div>
