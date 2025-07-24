@@ -18,7 +18,7 @@ function PageHero({
       <div className="absolute inset-0 bg-black/40"></div>
       {/* Content layer */}
       <div className="relative text-center px-4 sm:px-6 lg:px-8 z-10">
-        <h1 className="text-4xl font-extrabold text-white mt-4 uppercase">
+        <h1 className="text-4xl font-extrabold text-white mt-16 md:mt-4 uppercase">
           {title}
         </h1>
         <p className="text-lg md:text-xl text-white mt-4 max-w-2xl mx-auto">

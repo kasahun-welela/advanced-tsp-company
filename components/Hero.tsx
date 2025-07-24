@@ -41,7 +41,7 @@ const Hero = () => {
           </div>
         </div>
       </section>
-      <section className="container mx-auto px-6 lg:px-8 bg-slate-950  -mt-20">
+      <section className="container mx-auto px-4 sm:px-6 lg:px-8 bg-slate-950  -mt-20">
         <Tabs defaultValue="assess" className="w-full py-3">
           <TabsList className="grid grid-cols-2 md:grid-cols-4">
             <TabsTrigger
