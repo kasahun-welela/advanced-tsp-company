@@ -131,7 +131,7 @@ const CloudComputing = () => {
           />
           <div className="grid md:grid-cols-3 gap-8">
             {whyMoveToCloud.map((item) => (
-              <div className="text-center">
+              <div className="text-center" key={item.title}>
                 <span className={`text-2xl font-bold ${item.color}`}>
                   {item.percentage}
                 </span>

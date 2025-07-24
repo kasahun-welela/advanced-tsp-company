@@ -5,12 +5,21 @@ import Link from "next/link";
 const footerLinks = {
   services: {
     links: [
-      { name: "Managed IT Services", href: "#" },
-      { name: "Cloud Computing & Migration", href: "#" },
-      { name: "Cybersecurity & Risk Management", href: "#" },
-      { name: "IT Consulting & Strategy", href: "#" },
-      { name: "Custom Web & Software Development", href: "#" },
-      { name: "Learning and Training", href: "#" },
+      { name: "Managed IT Services", href: "/services/managed-services" },
+      {
+        name: "Cloud Computing & Migration",
+        href: "/services/cloud-migration",
+      },
+      {
+        name: "Cybersecurity & Risk Management",
+        href: "/services/cybersecurity",
+      },
+      { name: "IT Consulting & Strategy", href: "/services/consulting" },
+      {
+        name: "Custom Web & Software Development",
+        href: "/services/development",
+      },
+      { name: "Learning and Training", href: "/services/training" },
     ],
   },
   company: {
