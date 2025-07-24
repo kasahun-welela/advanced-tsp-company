@@ -41,7 +41,7 @@ const Footer = () => {
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 py-16">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8 py-16">
           {/* Company Info */}
           <div className="space-y-6 col-span-2 md:col-span-1">
             <div className="flex items-center">
@@ -114,13 +114,13 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-6">
+          <div className="space-y-6 ">
             <h3 className="text-lg font-semibold">Contact Info</h3>
             <div className="space-y-4">
-              <div className="flex  items-start space-x-3">
+              <div className="flex  items-start gap-2">
                 <Mail className="w-5 h-5 text-primary mt-0.5" />
-                <div className="flex-1">
-                  <p className="text-gray-300">hello@advancedtsp.com</p>
+                <div className="">
+                  <p className="text-gray-300">hello@atsp.com</p>
                   <p className="text-gray-400 text-sm">General inquiries</p>
                 </div>
               </div>
