@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Shield,
   Lock,
@@ -12,29 +11,6 @@ import SectionTitle from "@/components/common/SectionTitle";
 import CTA from "@/components/common/CTA";
 
 const Cybersecurity = () => {
-  const threats = [
-    {
-      name: "Malware & Ransomware",
-      percentage: "94%",
-      description: "of malware is delivered via email",
-    },
-    {
-      name: "Phishing Attacks",
-      percentage: "90%",
-      description: "of data breaches start with phishing",
-    },
-    {
-      name: "Insider Threats",
-      percentage: "34%",
-      description: "of breaches involve internal actors",
-    },
-    {
-      name: "Data Breaches",
-      percentage: "$4.45M",
-      description: "average cost of a data breach",
-    },
-  ];
-
   const services = [
     {
       icon: Shield,
@@ -81,37 +57,9 @@ const Cybersecurity = () => {
         description="Protect your business from evolving cyber threats with comprehensive security solutions and proactive risk management."
       />
 
-      {/* Threat Landscape */}
-      {/* <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Today's Threat Landscape
-            </h2>
-            <p className="text-xl text-gray-600">
-              Understanding the cybersecurity challenges facing modern
-              businesses.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {threats.map((threat, index) => (
-              <div key={index} className="bg-red-50 rounded-xl p-6 text-center">
-                <div className="text-3xl font-bold text-red-600 mb-2">
-                  {threat.percentage}
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  {threat.name}
-                </h3>
-                <p className="text-gray-600 text-sm">{threat.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
       {/* Services Section */}
       <section className="py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle
             title="Our Security Services"
             description="Comprehensive cybersecurity solutions to protect your business assets."

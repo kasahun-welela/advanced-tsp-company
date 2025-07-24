@@ -105,10 +105,12 @@ const Learning = () => {
             {benefits.map((benefit, index) => (
               <div key={index} className="text-center">
                 <div className="text-4xl mb-4">{benefit.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-50 mb-3">
                   {benefit.title}
                 </h3>
-                <p className="text-gray-600">{benefit.description}</p>
+                <p className="text-gray-600 dark:text-gray-400">
+                  {benefit.description}
+                </p>
               </div>
             ))}
           </div>
@@ -137,7 +139,7 @@ const Learning = () => {
                       className="flex items-center space-x-2"
                     >
                       <div className="w-2 h-2 bg-primary rounded-full"></div>
-                      <span className="dark:text-gray-300 text-gray-600">
+                      <span className="dark:text-gray-400 text-gray-600">
                         {feature}
                       </span>
                     </li>
