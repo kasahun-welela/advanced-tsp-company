@@ -1,7 +1,4 @@
 import Link from "next/link";
-import { PhoneIcon } from "lucide-react";
-import React from "react";
-import { Button } from "../ui/button";
 
 function PageHero({
   title,
@@ -30,12 +27,6 @@ function PageHero({
             className="bg-primary text-white px-4 py-2 rounded-md hover:bg-primary/80"
           >
             Schedule a Consultation
-          </Link>
-          <Link href="tel:100-2222-2222">
-            <Button className="bg-white text-black hover:text-white px-4 py-2 rounded-md">
-              <PhoneIcon className="w-4 h-4" />
-              100-2222-2222
-            </Button>
           </Link>
         </div>
       </div>
