@@ -35,7 +35,6 @@ const Consultation = () => {
         title="Schedule Your Consultation"
         description="Get expert advice tailored to your business needs. Our technology consultants will help you identify opportunities and create a roadmap for success."
       />
-
       <ScheduleForm />
 
       <section className="pb-20">
