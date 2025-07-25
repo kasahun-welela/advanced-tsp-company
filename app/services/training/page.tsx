@@ -94,6 +94,8 @@ const Learning = () => {
       <PageHero
         title="Learning & Training"
         description="Empower your team and advance your career with comprehensive technology training programs and professional development courses."
+        linkText="Schedule a Consultation"
+        linkHref="/schedule-consultation"
       />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <section className="py-10 ">

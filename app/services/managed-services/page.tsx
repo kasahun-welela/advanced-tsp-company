@@ -44,6 +44,8 @@ function ManagedServices() {
       <PageHero
         title="Managed IT Services"
         description="Comprehensive IT infrastructure management that keeps your business running smoothly while you focus on growth."
+        linkText="Schedule a Consultation"
+        linkHref="/schedule-consultation"
       />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">

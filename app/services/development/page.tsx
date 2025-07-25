@@ -77,6 +77,8 @@ const Development = () => {
       <PageHero
         title="Custom Web & Software Development"
         description="Transform your ideas into powerful digital solutions with custom web applications, mobile apps, and software systems."
+        linkText="Schedule a Consultation"
+        linkHref="/schedule-consultation"
       />
 
       {/* Services Section */}

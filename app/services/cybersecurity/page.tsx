@@ -55,6 +55,8 @@ const Cybersecurity = () => {
       <PageHero
         title="Cybersecurity & Risk Management"
         description="Protect your business from evolving cyber threats with comprehensive security solutions and proactive risk management."
+        linkText="Schedule a Consultation"
+        linkHref="/schedule-consultation"
       />
 
       {/* Services Section */}

@@ -82,6 +82,8 @@ const Consulting = () => {
       <PageHero
         title="IT Consulting & Strategy"
         description="Strategic technology guidance to align your IT investments with business goals and drive sustainable growth."
+        linkText="Schedule a Consultation"
+        linkHref="/schedule-consultation"
       />
       {/* Services Section */}
       <section className="py-10 ">
