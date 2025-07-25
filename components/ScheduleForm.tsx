@@ -83,8 +83,8 @@ function ScheduleForm() {
               Request Your Consultation
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400">
-              Fill out the form below and we'll get back to you within 24 hours
-              to schedule your consultation.
+              Fill out the form below and we&apos;ll get back to you within 24
+              hours to schedule your consultation.
             </p>
           </div>
 
