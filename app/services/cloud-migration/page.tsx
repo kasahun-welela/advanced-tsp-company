@@ -91,6 +91,8 @@ const CloudComputing = () => {
         title="Cloud Computing & Migration"
         description=" Transform your business with scalable, secure, and cost-effective
               cloud solutions that drive innovation and growth."
+        linkText="Schedule a Consultation"
+        linkHref="/schedule-consultation"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Services Section */}
