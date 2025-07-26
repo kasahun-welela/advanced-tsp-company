@@ -52,7 +52,7 @@ const NavBar = () => {
       ],
     },
     { name: "Contact Us", href: "/contact" },
-    { name: "Get IT support", href: "/get-it-support" },
+    { name: "Book Now", href: "/schedule-consultation" },
   ];
 
   const mobileMenuVariants = {
