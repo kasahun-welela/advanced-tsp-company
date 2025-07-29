@@ -1,12 +1,7 @@
 import SectionTitle from "@/components/common/SectionTitle";
 import Hero from "@/components/Hero";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { CardContent, CardTitle, CardHeader } from "@/components/ui/card";
+
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
@@ -26,6 +21,7 @@ export default function Home() {
         "Vendor Management (ISP, software providers)",
       ],
       href: "/services/managed-services",
+      bgImage: "/images/managed-services.jpg",
     },
     {
       title: "Cloud Computing & Migration ",
@@ -43,6 +39,7 @@ export default function Home() {
         "Setup of CI/CD pipelines for cloud-hosted applications",
       ],
       href: "/services/cloud-migration",
+      bgImage: "/images/cloud.jpg",
     },
     {
       title: "Cybersecurity & Risk Management",
@@ -59,6 +56,7 @@ export default function Home() {
         "MFA and VPN integration across business systems",
       ],
       href: "/services/cybersecurity",
+      bgImage: "/images/security.jpg",
     },
     {
       title: "IT Consulting & Strategy",
@@ -76,6 +74,7 @@ export default function Home() {
         "Strategic planning for enterprise application modernization",
       ],
       href: "/services/consulting",
+      bgImage: "/images/it-consulting.jpg",
     },
     {
       title: "Custom Web & Software Development",
@@ -93,6 +92,7 @@ export default function Home() {
         "Create microservices to connect various systems and databases",
       ],
       href: "/services/development",
+      bgImage: "/images/development.jpg",
     },
     {
       title: "Learning & Training",
@@ -106,13 +106,14 @@ export default function Home() {
         "Integrate enterprise applications using MuleSoft Anypoint Platform",
       ],
       href: "/services/training",
+      bgImage: "/images/training.jpg",
     },
   ];
 
   return (
     <div className="">
       <Hero />
-      <section className="container mx-auto px-6 lg:px-8 py-10">
+      {/* <section className="container mx-auto px-6 lg:px-8 py-10">
         <SectionTitle
           title="Our Services"
           description="Comprehensive technology solutions designed to accelerate your business growth and digital transformation."
@@ -144,6 +145,56 @@ export default function Home() {
                 </Link>
               </CardFooter>
             </Card>
+          ))}
+        </div>
+      </section> */}
+      <section className="container mx-auto px-6 lg:px-8 py-10">
+        <SectionTitle
+          title="Our Services"
+          description="Comprehensive technology solutions designed to accelerate your business growth and digital transformation."
+        />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {serviceCards.map((service) => (
+            <div
+              key={service.title}
+              className="relative overflow-hidden rounded-2xl shadow-lg group bg-cover bg-center h-[400px]"
+              style={{ backgroundImage: `url(${service.bgImage})` }}
+            >
+              <div className="absolute inset-0 bg-black/50 z-10 group-hover:opacity-100 transition-opacity duration-500 opacity-0"></div>
+
+              <div className="p-6 relative z-20 h-full  bg-white/80 dark:bg-black/40 backdrop-blur group-hover:opacity-0 transition-opacity duration-300">
+                <CardHeader>
+                  <CardTitle className="text-2xl font-bold text-center">
+                    {service.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-700 dark:text-gray-200">
+                    {service.description}
+                  </p>
+                </CardContent>
+              </div>
+
+              <div className="absolute inset-0 p-6 z-30 flex flex-col justify-between text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div>
+                  <h3 className="text-2xl font-bold mb-3">{service.title}</h3>
+                  <ul className="list-disc list-inside text-sm space-y-1">
+                    {service.tasks.slice(0, 5).map((task, idx) => (
+                      <li key={idx}>{task}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="pt-4">
+                  <Link
+                    href={service.href}
+                    className="inline-flex items-center gap-2 text-white font-semibold underline hover:opacity-80"
+                  >
+                    Learn More
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
       </section>
