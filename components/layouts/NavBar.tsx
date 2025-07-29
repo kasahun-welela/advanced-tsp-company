@@ -52,7 +52,6 @@ const NavBar = () => {
       ],
     },
     { name: "Contact Us", href: "/contact" },
-    { name: "Book Now", href: "/schedule-consultation" },
   ];
 
   const mobileMenuVariants = {
@@ -82,13 +81,12 @@ const NavBar = () => {
     <nav className="w-full  ">
       {/* Desktop Navigation */}
       <div className="hidden md:block fixed top-0 left-0 right-0 bg-white dark:bg-slate-800  z-50 tracking-wide">
-        <div className="flex justify-between py-4 items-center container mx-auto px-4 sm:px-6 lg:px-8  ">
+        <div className="flex justify-between py-6 items-center container mx-auto px-4 sm:px-6 lg:px-8  ">
           <Link href="/" className="text-xl font-bold">
-            TSP Company
+            Advance Service Provider
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center flex-1 justify-end">
+          <div className="flex items-center gap-4">
             <NavigationMenu>
               <NavigationMenuList>
                 {navLinks.map((link) =>
@@ -132,7 +130,14 @@ const NavBar = () => {
                 )}
               </NavigationMenuList>
             </NavigationMenu>
+            <Link
+              className="px-4 py-2 text-sm font-medium hover:text-primary hover:bg-primary/10 transition-colors dark:hover:text-white bg-primary text-white rounded-md"
+              href="/schedule-consultation"
+            >
+              Schedule Consultation
+            </Link>
           </div>
+
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             className="text-2xl"
@@ -148,7 +153,7 @@ const NavBar = () => {
       {/* Mobile Navigation */}
       <div className=" bg-white dark:bg-slate-800  flex justify-between items-center px-4 md:hidden py-5 fixed top-0 left-0 right-0  z-50 transition-all duration-300">
         <Link href="/">
-          <span className="text-xl font-bold">TSP Company</span>
+          <span className="text-xl font-bold">Advance Service Provider</span>
         </Link>
 
         <button
@@ -192,7 +197,7 @@ const NavBar = () => {
               exit="closed"
             >
               <div className="text-primary font-bold flex justify-between items-center p-4">
-                <h1 className="text-xl font-bold">TSP Company</h1>
+                <h1 className="font-bold">Advance Service Provider</h1>
               </div>
               <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3   ">
                 {navLinks.map((link) =>
@@ -248,6 +253,13 @@ const NavBar = () => {
                     </div>
                   )
                 )}
+                <Link
+                  className="px-4 py-2 text-sm font-medium hover:text-primary hover:bg-primary/10 transition-colors dark:hover:text-white bg-primary text-white rounded-md"
+                  href="/schedule-consultation"
+                  onClick={closeMenu}
+                >
+                  Schedule Consultation
+                </Link>
               </div>
             </motion.div>
           </motion.div>
