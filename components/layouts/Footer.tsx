@@ -24,12 +24,10 @@ const footerLinks = {
   },
   company: {
     links: [
-      { name: "About Us", href: "#about" },
-      { name: "Our Team", href: "#team" },
-      { name: "Careers", href: "#" },
-      { name: "Case Studies", href: "#" },
-      { name: "Blog", href: "#" },
-      { name: "Contact", href: "#contact" },
+      { name: "About Us", href: "/about" },
+      { name: "Careers", href: "/careers" },
+      { name: "Contact Us", href: "/contact" },
+      { name: "Schedule Consultation", href: "/schedule-consultation" },
     ],
   },
 };
@@ -45,7 +43,9 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6 col-span-2 md:col-span-1">
             <div className="flex items-center">
-              <span className=" text-xl font-bold">Advanced TSP</span>
+              <span className=" text-xl font-bold">
+                Advance Service Provider
+              </span>
             </div>
 
             <p className="text-gray-300 leading-relaxed">
@@ -148,7 +148,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-gray-400 text-sm">
-              © {currentYear} Advanced TSP. All rights reserved.
+              © {currentYear} Advance Service Provider. All rights reserved.
             </div>
 
             <div className="flex space-x-6 text-sm">
