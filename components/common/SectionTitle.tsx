@@ -7,7 +7,7 @@ function SectionTitle({
 }) {
   return (
     <div className="text-center space-y-4 mb-16">
-      <h2 className="text-5xl mb-6 font-bold text-gray-900 dark:text-white   ">
+      <h2 className="text-3xl md:text-4xl lg:text-5xl mb-6 font-bold text-gray-900 dark:text-white   ">
         {title}
       </h2>
       <p className="text-xl text-gray-600 dark:text-gray-200 max-w-3xl mx-auto">
