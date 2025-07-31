@@ -2,6 +2,7 @@ import CTA from "@/components/common/CTA";
 import PageHero from "@/components/common/PageHero";
 import SectionTitle from "@/components/common/SectionTitle";
 import { Monitor, Shield, Headphones, Clock, CheckCircle } from "lucide-react";
+import Link from "next/link";
 
 function ManagedServices() {
   const features = [
@@ -10,24 +11,28 @@ function ManagedServices() {
       title: "24/7 Network Monitoring",
       description:
         "Continuous monitoring of your IT infrastructure to prevent issues before they impact your business.",
+      link: "managed-services/network-monitoring",
     },
     {
       icon: Headphones,
       title: "Help Desk Support",
       description:
         "Dedicated technical support team available to resolve issues quickly and efficiently.",
+      link: "managed-services/help-desk-support",
     },
     {
       icon: Shield,
       title: "Proactive Maintenance",
       description:
         "Regular system updates, patches, and maintenance to ensure optimal performance and security.",
+      link: "managed-services/proactive-maintenance",
     },
     {
       icon: Clock,
       title: "Rapid Response",
       description:
         "Quick response times with guaranteed SLAs to minimize downtime and maintain productivity.",
+      link: "managed-services/rapid-response",
     },
   ];
 
@@ -57,15 +62,11 @@ function ManagedServices() {
               description="Complete IT support and management solutions tailored to your business needs."
             />
             <div className="grid md:grid-cols-2 gap-8">
-              {features.map((feature, index) => {
-                const Icon = feature.icon;
-                return (
-                  <div
-                    key={index}
-                    className="bg-card rounded-xl shadow p-8 hover:shadow-xl hover:scale-105 transition-all duration-300"
-                  >
+              {features.map((feature, index) => (
+                <Link href={feature.link} key={index}>
+                  <div className="bg-card rounded-xl shadow p-8 hover:shadow-xl hover:scale-105 transition-all duration-300">
                     <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
-                      <Icon className="w-6 h-6 text-white" />
+                      <feature.icon className="w-6 h-6 text-white" />
                     </div>
                     <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
                       {feature.title}
@@ -74,8 +75,8 @@ function ManagedServices() {
                       {feature.description}
                     </p>
                   </div>
-                );
-              })}
+                </Link>
+              ))}
             </div>
           </div>
         </section>
