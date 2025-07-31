@@ -3,6 +3,7 @@ import { Code, Smartphone, Globe, Database, Zap, Palette } from "lucide-react";
 import PageHero from "@/components/common/PageHero";
 import CTA from "@/components/common/CTA";
 import SectionTitle from "@/components/common/SectionTitle";
+import Link from "next/link";
 
 const Development = () => {
   const services = [
@@ -11,36 +12,42 @@ const Development = () => {
       title: "Custom Web Applications",
       description:
         "Scalable, responsive web applications built with modern technologies and best practices.",
+      link: "development/custom-web-applications",
     },
     {
       icon: Smartphone,
       title: "Mobile Development",
       description:
         "Native and cross-platform mobile applications for iOS and Android devices.",
+      link: "development/mobile-development",
     },
     {
       icon: Database,
       title: "Backend Development",
       description:
         "Robust APIs, databases, and server-side logic to power your applications.",
+      link: "development/backend-development",
     },
     {
       icon: Palette,
       title: "UI/UX Design",
       description:
         "Intuitive user interfaces and exceptional user experiences that drive engagement.",
+      link: "development/ui-ux-design",
     },
     {
       icon: Zap,
       title: "Performance Optimization",
       description:
         "Speed optimization and performance tuning for lightning-fast user experiences.",
+      link: "development/performance-optimization",
     },
     {
       icon: Code,
       title: "Legacy Modernization",
       description:
         "Modernize outdated systems with contemporary technologies and architectures.",
+      link: "development/legacy-modernization",
     },
   ];
 
@@ -92,20 +99,19 @@ const Development = () => {
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
-                <div
-                  key={index}
-                  className="bg-card rounded-xl p-6 hover:shadow-lg transition-shadow"
-                >
-                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-white" />
+                <Link href={service.link} key={index}>
+                  <div className="bg-card rounded-xl p-6 hover:shadow-lg transition-shadow">
+                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
+                      <Icon className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-50 mb-3">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400">
+                      {service.description}
+                    </p>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-50 mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    {service.description}
-                  </p>
-                </div>
+                </Link>
               );
             })}
           </div>
