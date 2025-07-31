@@ -80,24 +80,22 @@ const CloudMigrationDetails = () => {
           description={subService.organizationNeed.organizationalDefinition}
         />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {subService.organizationNeed.needs.map(
-            (reason: any, index: number) => (
-              <div
-                key={reason._id}
-                className="bg-blue-50 rounded-xl p-6 flex items-center gap-3 dark:bg-card"
-              >
-                <CheckCircle className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-200 mb-2">
-                    {reason.title}
-                  </h3>
-                  <p className="text-gray-700 dark:text-gray-400">
-                    {reason.description}
-                  </p>
-                </div>
+          {subService.organizationNeed.needs.map((reason) => (
+            <div
+              key={reason._id}
+              className="bg-blue-50 rounded-xl p-6 flex items-center gap-3 dark:bg-card"
+            >
+              <CheckCircle className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-200 mb-2">
+                  {reason.title}
+                </h3>
+                <p className="text-gray-700 dark:text-gray-400">
+                  {reason.description}
+                </p>
               </div>
-            )
-          )}
+            </div>
+          ))}
         </div>
         <div className="my-10">
           <SectionTitle
@@ -105,21 +103,19 @@ const CloudMigrationDetails = () => {
             description={subService.businessValue.businessValueDefinition}
           />
           <div className="grid md:grid-cols-2 gap-8">
-            {subService.businessValue.values.map(
-              (value: any, index: number) => (
-                <div
-                  key={value._id}
-                  className="bg-blue-50 rounded-xl p-6 dark:bg-card"
-                >
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-200 mb-2">
-                    {value.title}
-                  </h3>
-                  <p className="text-gray-700 dark:text-gray-400">
-                    {value.description}
-                  </p>
-                </div>
-              )
-            )}
+            {subService.businessValue.values.map((value) => (
+              <div
+                key={value._id}
+                className="bg-blue-50 rounded-xl p-6 dark:bg-card"
+              >
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-200 mb-2">
+                  {value.title}
+                </h3>
+                <p className="text-gray-700 dark:text-gray-400">
+                  {value.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
 

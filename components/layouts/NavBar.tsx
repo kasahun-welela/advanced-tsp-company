@@ -34,7 +34,7 @@ const NavBar = () => {
         { name: "Managed IT Services", href: "/services/managed-services" },
         {
           name: "Cloud Computing & Migration",
-          href: "/services/cloud-migration",
+          href: "/services/cloud-computing",
         },
         {
           name: "Cybersecurity & Risk Management",
@@ -83,7 +83,7 @@ const NavBar = () => {
       <div className="hidden md:block fixed top-0 left-0 right-0 bg-white dark:bg-slate-800  z-50 tracking-wide">
         <div className="flex justify-between py-6 items-center container mx-auto px-4 sm:px-6 lg:px-8  ">
           <Link href="/" className="text-xl font-bold">
-            Advance Service Provider
+            Advanced Technology Solutions
           </Link>
 
           <div className="flex items-center gap-4">
@@ -153,7 +153,9 @@ const NavBar = () => {
       {/* Mobile Navigation */}
       <div className=" bg-white dark:bg-slate-800  flex justify-between items-center px-4 md:hidden py-5 fixed top-0 left-0 right-0  z-50 transition-all duration-300">
         <Link href="/">
-          <span className="text-xl font-bold">Advance Service Provider</span>
+          <span className="text-xl font-bold">
+            Advanced Technology Solutions
+          </span>
         </Link>
 
         <button
@@ -197,7 +199,7 @@ const NavBar = () => {
               exit="closed"
             >
               <div className="text-primary font-bold flex justify-between items-center p-4">
-                <h1 className="font-bold">Advance Service Provider</h1>
+                <h1 className="font-bold">Advanced Technology Solutions</h1>
               </div>
               <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3   ">
                 {navLinks.map((link) =>
