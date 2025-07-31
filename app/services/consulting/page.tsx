@@ -10,6 +10,7 @@ import {
 import PageHero from "@/components/common/PageHero";
 import CTA from "@/components/common/CTA";
 import SectionTitle from "@/components/common/SectionTitle";
+import Link from "next/link";
 
 const Consulting = () => {
   const services = [
@@ -18,36 +19,42 @@ const Consulting = () => {
       title: "Strategic IT Planning",
       description:
         "Develop comprehensive IT strategies aligned with your business objectives and growth plans.",
+      link: "consulting/strategic-it-planning",
     },
     {
       icon: TrendingUp,
       title: "Digital Transformation",
       description:
         "Guide your organization through digital transformation initiatives to improve efficiency and competitiveness.",
+      link: "consulting/digital-transformation",
     },
     {
       icon: Lightbulb,
       title: "Technology Assessment",
       description:
         "Evaluate your current technology stack and recommend improvements for optimal performance.",
+      link: "consulting/technology-assessment",
     },
     {
       icon: Cog,
       title: "Process Optimization",
       description:
         "Streamline business processes through technology integration and automation solutions.",
+      link: "consulting/process-optimization",
     },
     {
       icon: BarChart,
       title: "Performance Analytics",
       description:
         "Implement data-driven insights and analytics to make informed technology decisions.",
+      link: "consulting/performance-analytics",
     },
     {
       icon: Users,
       title: "Change Management",
       description:
         "Support your team through technology transitions with comprehensive change management strategies.",
+      link: "consulting/change-management",
     },
   ];
   const approach = [
@@ -94,20 +101,19 @@ const Consulting = () => {
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div
-                key={index}
-                className="bg-card rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow"
-              >
-                <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
-                  <service.icon className="w-6 h-6 text-white" />
+              <Link href={service.link} key={index}>
+                <div className="bg-card rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
+                    <service.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-50 mb-3">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    {service.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-50 mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  {service.description}
-                </p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
