@@ -76,7 +76,7 @@ const CloudMigrationDetails = () => {
         />
 
         <SectionTitle
-          title="Why Organizations Need Cloud Migration"
+          title={`Why Organizations Need ${subService.subServiceName}`}
           description={subService.organizationNeed.organizationalDefinition}
         />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -101,7 +101,7 @@ const CloudMigrationDetails = () => {
         </div>
         <div className="my-10">
           <SectionTitle
-            title="Business Value of Cloud Migration"
+            title={`Business Value of ${subService.subServiceName}`}
             description={subService.businessValue.businessValueDefinition}
           />
           <div className="grid md:grid-cols-2 gap-8">
