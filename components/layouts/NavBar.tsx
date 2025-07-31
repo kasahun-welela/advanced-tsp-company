@@ -113,7 +113,7 @@ const NavBar = () => {
                       <NavigationMenuContent className="md:w-[200px] lg:w-[300px]">
                         <div className="flex flex-col p-2">
                           {link.submenu.map((sublink) => (
-                            <NavigationMenuLink
+                            <Link
                               key={sublink.name}
                               href={sublink.href}
                               className={`px-4 py-2 text-sm rounded hover:bg-primary/10 hover:text-primary transition-colors ${
@@ -121,7 +121,7 @@ const NavBar = () => {
                               }`}
                             >
                               {sublink.name}
-                            </NavigationMenuLink>
+                            </Link>
                           ))}
                         </div>
                       </NavigationMenuContent>

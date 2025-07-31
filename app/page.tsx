@@ -4,11 +4,10 @@ import {
   CardContent,
   CardTitle,
   CardHeader,
-  CardFooter,
   CardDescription,
 } from "@/components/ui/card";
 
-import { ArrowRight } from "lucide-react";
+//   import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
@@ -144,7 +143,7 @@ export default function Home() {
                       ))}
                     </ul>
                   </CardContent>
-                  <CardFooter>
+                  {/* <CardFooter>
                     <div>
                       <Link
                         href={service.href}
@@ -154,7 +153,7 @@ export default function Home() {
                         <ArrowRight className="w-4 h-4" />
                       </Link>
                     </div>
-                  </CardFooter>
+                  </CardFooter> */}
                 </div>
               </div>
             </Link>
