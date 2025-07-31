@@ -37,7 +37,7 @@ export default function Home() {
         "Cloud Security",
         "Performance Optimization",
       ],
-      href: "/services/cloud-migration",
+      href: "/services/cloud-computing",
       bgImage: "/images/cloud.jpg",
     },
     {

@@ -11,35 +11,35 @@ const CloudComputing = () => {
       title: "Cloud Migration",
       description:
         "Seamless migration of your existing infrastructure to the cloud with minimal downtime.",
-      link: "/cloud-computing/cloud-migration",
+      link: "cloud-computing/cloud-migration",
     },
     {
       icon: Database,
       title: "Cloud Storage Solutions",
       description:
         "Scalable and secure cloud storage options tailored to your data requirements.",
-      link: "/cloud-computing/cloud-storage",
+      link: "cloud-computing/cloud-storage",
     },
     {
       icon: Globe,
       title: "Multi-Cloud Strategy",
       description:
         "Optimize costs and performance with strategic multi-cloud implementations.",
-      link: "/cloud-computing/multi-cloud-strategy",
+      link: "cloud-computing/multi-cloud-strategy",
     },
     {
       icon: Lock,
       title: "Cloud Security",
       description:
         "Comprehensive security measures to protect your cloud-based assets and data.",
-      link: "/cloud-computing/cloud-security",
+      link: "cloud-computing/cloud-security",
     },
     {
       icon: Zap,
       title: "Performance Optimization",
       description:
         "Continuous monitoring and optimization for peak cloud performance and cost efficiency.",
-      link: "/cloud-computing/performance-optimization",
+      link: "cloud-computing/performance-optimization",
     },
   ];
 
