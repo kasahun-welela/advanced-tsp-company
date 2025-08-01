@@ -16,4 +16,6 @@ export const scheduleFormSchema = z.object({
   servicesInterested: z.array(z.string()).min(1, {
     message: "Please select at least one service.",
   }),
+  preferredDate: z.date(),
+  preferredTime: z.string().min(1, { message: "Preferred time is required" }),
 });

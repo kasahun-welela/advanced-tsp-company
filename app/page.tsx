@@ -67,7 +67,7 @@ export default function Home() {
         "Change Management",
       ],
       href: "/services/consulting",
-      bgImage: "/images/it-consulting.jpg",
+      bgImage: "/images/it-consulting.png",
     },
     {
       title: "Custom Web & Software Development",
@@ -94,7 +94,7 @@ export default function Home() {
         "Self-Paced Online",
       ],
       href: "/services/training",
-      bgImage: "/images/training.jpg",
+      bgImage: "/images/learning.jpg",
     },
   ];
 

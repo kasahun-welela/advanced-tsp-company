@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Advance Service Provider",
+  title: "Advanced Technology Solutions",
   description:
     "Comprehensive technology solutions designed to accelerate your business growth and digital transformation.",
 };
