@@ -109,8 +109,8 @@ function ScheduleForm() {
               Request Your Consultation
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-200">
-              Fill out the form below and we'll get back to you within 24 hours
-              to schedule your consultation.
+              Fill out the form below and we&apos;ll get back to you within 24
+              hours to schedule your consultation.
             </p>
           </div>
 
@@ -258,7 +258,7 @@ function ScheduleForm() {
                   <FormItem>
                     <div className="mb-4">
                       <FormLabel className="text-base">
-                        Services You're Interested In
+                        Services You&apos;re Interested In
                       </FormLabel>
                     </div>
                     <div className="grid md:grid-cols-2 gap-3">

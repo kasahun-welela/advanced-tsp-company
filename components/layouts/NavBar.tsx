@@ -6,7 +6,6 @@ import {
   NavigationMenuItem,
   NavigationMenuTrigger,
   NavigationMenuContent,
-  NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
@@ -95,7 +94,9 @@ const NavBar = () => {
                       <Link
                         href={link.href}
                         className={`px-4 py-2 text-sm font-medium hover:text-primary transition-colors ${
-                          pathname === link.href ? "text-primary" : ""
+                          pathname === link.href
+                            ? "text-primary dark:bg-accent dark:text-white"
+                            : ""
                         }`}
                       >
                         {link.name}

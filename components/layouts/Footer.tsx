@@ -146,13 +146,13 @@ const Footer = () => {
 
         {/* Bottom Footer */}
         <div className="border-t border-gray-800 py-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0">
             <div className="text-gray-400 text-sm">
               © {currentYear} Advanced Technology Solutions. All rights
               reserved.
             </div>
 
-            <div className="flex space-x-6 text-sm">
+            {/* <div className="flex space-x-6 text-sm">
               <Link
                 href="#"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -171,7 +171,7 @@ const Footer = () => {
               >
                 Cookie Policy
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

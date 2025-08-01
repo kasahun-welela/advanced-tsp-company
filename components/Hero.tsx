@@ -1,13 +1,7 @@
-import {
-  PhoneIcon,
-  ChartNoAxesCombined,
-  Pencil,
-  Monitor,
-  CloudCog,
-} from "lucide-react";
+import { PhoneIcon } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+// import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Hero = () => {
   return (
@@ -15,19 +9,20 @@ const Hero = () => {
       <section className="md:mt-16 w-full h-screen flex gap-3 items-center justify-center overflow-hidden bg-[url(/images/hero-img.jpg)] bg-cover bg-center bg-no-repeat ">
         <div className="text-center px-4 sm:px-6 lg:px-8">
           <p className="text-lg md:text-2xl  text-white">
-            Not your typical managed IT services provider.{" "}
+            Your trusted partner in digital transformation.
           </p>
           <h1 className="text-4xl md:text-7xl font-extrabold  text-white mt-4 uppercase">
-            Excellent IT with <br /> a solution in mind
+            Elevate your business with <br /> cutting-edge IT solutions
           </h1>
           <p className="text-lg md:text-xl text-white mt-4 max-w-2xl mx-auto">
-            The best Managed IT Services are customized, technically sound and
-            fully efficient. At Atlantic Technology Services, our mission is to
-            ensure your IT needs are met.
+            we deliver innovative and customized IT services that drive
+            efficiency, boost performance, and enable sustainable growth. With
+            over a decade of proven excellence, we help organizations thrive in
+            a competitive, digital-first world.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 animate-fade-in-up animate-delay-300">
             <Link
-              href="/contact"
+              href="/schedule-consultation"
               className="bg-primary text-white px-4 py-2 rounded-md hover:bg-primary/80"
             >
               Schedule a Consultation
@@ -41,7 +36,7 @@ const Hero = () => {
           </div>
         </div>
       </section>
-      <section className="container mx-auto px-4 sm:px-6 lg:px-8 bg-slate-950  -mt-20">
+      {/* <section className="container mx-auto px-4 sm:px-6 lg:px-8 bg-slate-950  -mt-20">
         <Tabs defaultValue="assess" className="w-full py-3">
           <TabsList className="grid grid-cols-2 md:grid-cols-4">
             <TabsTrigger
@@ -192,7 +187,7 @@ const Hero = () => {
             </div>
           </TabsContent>
         </Tabs>
-      </section>
+      </section> */}
     </>
   );
 };
