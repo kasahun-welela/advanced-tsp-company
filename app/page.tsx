@@ -1,5 +1,6 @@
 import SectionTitle from "@/components/common/SectionTitle";
 import Hero from "@/components/Hero";
+import Testimonial from "@/components/Testimonial";
 import {
   CardContent,
   CardTitle,
@@ -113,20 +114,22 @@ export default function Home() {
                 className="relative overflow-hidden rounded-2xl shadow-lg group bg-cover bg-center h-[400px]"
                 style={{ backgroundImage: `url(${service.bgImage})` }}
               >
-                <div className="absolute inset-0 bg-black/50 z-10 group-hover:opacity-100 transition-opacity duration-500 opacity-0"></div>
+                <div className="absolute inset-0 z-10 group-hover:opacity-100 transition-opacity duration-500 opacity-0"></div>
 
-                <div className="p-6 relative z-20 h-full bg-black/40 backdrop-blur group-hover:opacity-0 transition-opacity duration-300">
+                <div className="p-6 relative z-20 h-full inset-0 bg-gradient-to-b from-black/60 to-black/10 group-hover:opacity-0 transition-opacity duration-300">
                   <CardHeader>
-                    <CardTitle className="text-2xl font-bold text-center text-white">
+                    <CardTitle className="text-2xl font-bold text-center text-white drop-shadow-md text-shadow-background">
                       {service.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-200">{service.description}</p>
+                    <p className="font-semibold text-white  drop-shadow-md">
+                      {service.description}
+                    </p>
                   </CardContent>
                 </div>
 
-                <div className="absolute inset-0 p-6 z-30 space-y-4  text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute inset-0 p-6 z-30 space-y-4 bg-black/40 backdrop-blur  text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <CardHeader>
                     <CardTitle className="text-2xl font-bold text-center">
                       {service.title}
@@ -143,23 +146,57 @@ export default function Home() {
                       ))}
                     </ul>
                   </CardContent>
-                  {/* <CardFooter>
-                    <div>
-                      <Link
-                        href={service.href}
-                        className="inline-flex items-center gap-2 text-white font-semibold underline hover:opacity-80"
-                      >
-                        Learn More
-                        <ArrowRight className="w-4 h-4" />
-                      </Link>
-                    </div>
-                  </CardFooter> */}
                 </div>
               </div>
             </Link>
           ))}
         </div>
+        {/* <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {serviceCards.map((service) => (
+            <Link href={service.href} key={service.title}>
+              <div className="relative overflow-hidden rounded-2xl shadow-lg group h-[400px]">
+                <div className="p-6 relative  z-20 h-full group-hover:opacity-0 transition-opacity duration-300">
+                  <CardHeader>
+                    <CardTitle className="text-2xl font-bold text-center text-white">
+                      {service.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="bg-black/5 backdrop-blur">
+                    <p className="text-gray-200  text-shadow-background">
+                      {service.description}
+                    </p>
+                  </CardContent>
+                </div>
+
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: `url(${service.bgImage})` }}
+                />
+
+                <div className="absolute inset-0 bg-black/60 p-6 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-center text-white">
+                  <CardHeader>
+                    <CardTitle className="text-2xl font-bold text-center">
+                      {service.title}
+                    </CardTitle>
+                    <CardDescription className="text-gray-200 text-center">
+                      {service.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="mt-4">
+                    <h3 className="text-lg font-bold mb-2">Sub Services</h3>
+                    <ul className="list-disc list-inside text-sm space-y-1 ml-3">
+                      {service.subServices.map((subService) => (
+                        <li key={subService}>{subService}</li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div> */}
       </section>
+      <Testimonial />
     </div>
   );
 }
