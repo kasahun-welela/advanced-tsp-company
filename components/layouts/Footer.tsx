@@ -41,11 +41,10 @@ const Footer = () => {
         {/* Main Footer Content */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8 py-16">
           {/* Company Info */}
-          <div className="space-y-6 col-span-2 md:col-span-1">
-            <div className="flex items-center">
-              <span className=" text-xl font-bold">
-                Advanced Technology Solutions
-              </span>
+          <div className="text-start space-y-6 col-span-2 md:col-span-1">
+            <div className="flex flex-col items-start text-xl font-bold">
+              Advanced Technology <br />
+              <span className="text-sm">Solutions</span>
             </div>
 
             <p className="text-gray-300 leading-relaxed">

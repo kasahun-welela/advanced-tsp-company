@@ -89,7 +89,7 @@ function PageHero({
   };
 
   return (
-    <section className="relative md:mt-16 w-full h-96 flex items-center justify-center overflow-hidden">
+    <section className="relative md:mt-16 w-full h-auto flex items-center justify-center overflow-hidden">
       {/* Background image layer with animation */}
       <motion.div
         className="absolute inset-0 bg-[url('/images/about.jpg')] bg-cover bg-center bg-no-repeat"
@@ -108,7 +108,7 @@ function PageHero({
 
       {/* Content layer */}
       <motion.div
-        className="relative text-center py-16 px-4 sm:px-6 lg:px-8 z-10"
+        className="relative text-center  py-16 px-4 sm:px-6 lg:px-8 z-10"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
