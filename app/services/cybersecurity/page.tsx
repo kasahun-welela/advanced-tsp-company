@@ -53,7 +53,7 @@ const Cybersecurity = () => {
       title: "Security Training",
       description:
         "Employee education and awareness programs to build your human firewall.",
-      link: "cybersecurity/security-training",
+      link: "cybersecurity/security-awareness-training",
     },
   ];
 

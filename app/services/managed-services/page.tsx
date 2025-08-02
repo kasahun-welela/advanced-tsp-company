@@ -11,7 +11,7 @@ function ManagedServices() {
       title: "24/7 Network Monitoring",
       description:
         "Continuous monitoring of your IT infrastructure to prevent issues before they impact your business.",
-      link: "managed-services/network-monitoring",
+      link: "managed-services/network-management",
     },
     {
       icon: Headphones,

@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { ServiceDetails } from "@/interface";
 import Image from "next/image";
+import { easeOut, motion } from "framer-motion";
 
 const CloudMigrationDetails = () => {
   const params = useParams();
@@ -71,22 +72,46 @@ const CloudMigrationDetails = () => {
         description={subService.moto}
       />
       <section className="pt-10 container mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionTitle
+        {/* <SectionTitle
           title={`What is ${subService.subServiceName}?`}
           description={subService.definition}
-        />
+        /> */}
+        <div className="md:flex justify-center gap-10 pb-10">
+          <div className="md:w-1/2 flex flex-col justify-center items-center">
+            <motion.h1
+              initial={{ opacity: 0, translateY: 20 }}
+              whileInView={{ opacity: 1, translateY: 0 }}
+              transition={{ duration: 0.4, delay: 0.3, ease: easeOut }}
+              className="text-2xl md:text-3xl lg:text-4xl mb-6 font-bold text-gray-900 dark:text-white   "
+            >{`What is ${subService.subServiceName}?`}</motion.h1>
+          </div>
 
-        <div className="flex items-center gap-4">
+          <div className="md:w-1/2">
+            <motion.p
+              initial={{ opacity: 0, translateY: 20 }}
+              whileInView={{ opacity: 1, translateY: 0 }}
+              transition={{ duration: 0.4, delay: 0.7, ease: easeOut }}
+              className="text-xl text-gray-600 dark:text-gray-200 max-w-3xl mx-auto"
+            >
+              {subService.definition}
+            </motion.p>
+          </div>
+        </div>
+
+        <div className="md:flex items-center gap-4 pb-10">
+          <div className="md:w-1/2">
+            <Image
+              src={"/images/value.png"}
+              alt={subService.subServiceName}
+              width={500}
+              height={500}
+              className="w-1/2 rounded-xl"
+            />
+          </div>
+
           <SectionTitle
             title={`Why Organizations Need ${subService.subServiceName}`}
             description={subService.organizationNeed.organizationalDefinition}
-          />
-          <Image
-            src={"/images/value.png"}
-            alt={subService.subServiceName}
-            width={500}
-            height={500}
-            className="w-1/2 rounded-xl"
           />
         </div>
 
