@@ -81,8 +81,12 @@ const NavBar = () => {
       {/* Desktop Navigation */}
       <div className="hidden md:block fixed top-0 left-0 right-0 bg-white dark:bg-slate-800  z-50 tracking-wide">
         <div className="flex justify-between py-6 items-center container mx-auto px-4 sm:px-6 lg:px-8  ">
-          <Link href="/" className="text-xl font-bold">
-            Advanced Technology Solutions
+          <Link
+            href="/"
+            className="text-xl font-bold flex flex-col items-center"
+          >
+            Advanced Technology <br />
+            <span className="text-lg">Solutions</span>
           </Link>
 
           <div className="flex items-center gap-4">
