@@ -1,8 +1,8 @@
 import CTA from "@/components/common/CTA";
 import PageHero from "@/components/common/PageHero";
+import ServiceCard from "@/components/common/ServiceCard";
 import SectionTitle from "@/components/common/SectionTitle";
 import { Monitor, Shield, Headphones, Clock, CheckCircle } from "lucide-react";
-import Link from "next/link";
 
 function ManagedServices() {
   const features = [
@@ -63,19 +63,13 @@ function ManagedServices() {
             />
             <div className="grid md:grid-cols-2 gap-8">
               {features.map((feature, index) => (
-                <Link href={feature.link} key={index}>
-                  <div className="bg-card rounded-xl shadow p-8 hover:shadow-xl hover:scale-105 transition-all duration-300">
-                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
-                      <feature.icon className="w-6 h-6 text-white" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                      {feature.title}
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-200">
-                      {feature.description}
-                    </p>
-                  </div>
-                </Link>
+                <ServiceCard
+                  key={index}
+                  link={feature.link}
+                  icon={<feature.icon className="w-6 h-6 text-white" />}
+                  title={feature.title}
+                  description={feature.description}
+                />
               ))}
             </div>
           </div>

@@ -36,6 +36,7 @@ function SectionTitle({
         variants={containerVariants}
         initial="hidden"
         animate="visible"
+        transition={{ duration: 0.4, delay: 0.5 }}
         className="text-2xl md:text-3xl lg:text-4xl mb-6 font-bold text-gray-900 dark:text-white   "
       >
         {title}

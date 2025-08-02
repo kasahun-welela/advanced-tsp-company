@@ -8,6 +8,7 @@ import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { ServiceDetails } from "@/interface";
+import Image from "next/image";
 
 const CloudMigrationDetails = () => {
   const params = useParams();
@@ -75,10 +76,20 @@ const CloudMigrationDetails = () => {
           description={subService.definition}
         />
 
-        <SectionTitle
-          title={`Why Organizations Need ${subService.subServiceName}`}
-          description={subService.organizationNeed.organizationalDefinition}
-        />
+        <div className="flex items-center gap-4">
+          <SectionTitle
+            title={`Why Organizations Need ${subService.subServiceName}`}
+            description={subService.organizationNeed.organizationalDefinition}
+          />
+          <Image
+            src={"/images/value.png"}
+            alt={subService.subServiceName}
+            width={500}
+            height={500}
+            className="w-1/2 rounded-xl"
+          />
+        </div>
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {subService.organizationNeed.needs.map((reason) => (
             <div
