@@ -18,7 +18,7 @@ const CloudComputing = () => {
       title: "Cloud Storage Solutions",
       description:
         "Scalable and secure cloud storage options tailored to your data requirements.",
-      link: "cloud-computing/cloud-storage",
+      link: "cloud-computing/cloud-storage-solutions",
     },
     {
       icon: Globe,

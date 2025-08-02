@@ -18,14 +18,14 @@ function ManagedServices() {
       title: "Help Desk Support",
       description:
         "Dedicated technical support team available to resolve issues quickly and efficiently.",
-      link: "managed-services/help-desk-support",
+      link: "managed-services/help-desk-technical-support",
     },
     {
       icon: Shield,
       title: "Proactive Maintenance",
       description:
         "Regular system updates, patches, and maintenance to ensure optimal performance and security.",
-      link: "managed-services/proactive-maintenance",
+      link: "managed-services/proactive-monitoring-and-maintenance",
     },
     {
       icon: Clock,
