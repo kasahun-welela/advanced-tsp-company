@@ -1,7 +1,10 @@
+"use client";
+
 import SectionTitle from "./common/SectionTitle";
 import { Star } from "lucide-react";
 import React from "react";
 import Image from "next/image";
+import { motion, easeInOut, easeOut } from "framer-motion";
 
 function Testimonial() {
   const testimonials = [
@@ -34,23 +37,90 @@ function Testimonial() {
     },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: {
+      opacity: 0,
+      y: 30,
+      scale: 0.95,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: easeOut,
+      },
+    },
+    hover: {
+      y: -8,
+      scale: 1.02,
+      transition: {
+        duration: 0.3,
+        ease: easeInOut,
+      },
+    },
+  };
+
+  const starVariants = {
+    hidden: { opacity: 0, scale: 0 },
+    visible: (i: number) => ({
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delay: i * 0.1,
+        duration: 0.3,
+        ease: easeOut,
+      },
+    }),
+  };
+
   return (
     <div className="py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <motion.div
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <SectionTitle
             title="What Our Customers Say"
             description="Don't just take our word for it. Here's what our satisfied customers have to say about our services."
           />
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <motion.div
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
           {testimonials.map((testimonial) => (
-            <div
+            <motion.div
               key={testimonial.id}
-              className="bg-card rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow"
+              variants={cardVariants}
+              whileHover="hover"
+              className="bg-card rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 cursor-pointer"
             >
-              <div className="flex items-center mb-4">
+              <motion.div
+                className="flex items-center mb-4"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
                 <Image
                   src={testimonial.image}
                   alt={testimonial.name}
@@ -67,23 +137,43 @@ function Testimonial() {
                     {testimonial.service}
                   </p>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="flex mb-4">
+              <motion.div
+                className="flex mb-4"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star
+                  <motion.div
                     key={i}
-                    className="h-5 w-5 text-yellow-400 fill-current"
-                  />
+                    custom={i}
+                    variants={starVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    whileHover={{
+                      scale: 1.2,
+                      rotate: 10,
+                      transition: { duration: 0.2 },
+                    }}
+                  >
+                    <Star className="h-5 w-5 text-yellow-400 fill-current" />
+                  </motion.div>
                 ))}
-              </div>
+              </motion.div>
 
-              <p className="text-gray-700 dark:text-gray-300 italic">
+              <motion.p
+                className="text-gray-700 dark:text-gray-300 italic"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+              >
                 {`"${testimonial.comment}"`}
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );
