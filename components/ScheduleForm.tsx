@@ -33,16 +33,20 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { CalendarIcon, Clock } from "lucide-react";
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
+import axios from "axios";
+import { toast } from "sonner";
+import { useState } from "react";
 
 function ScheduleForm() {
+  const [isLoading, setIsLoading] = useState(false);
   const form = useForm({
     resolver: zodResolver(scheduleFormSchema),
     defaultValues: {
       hasITProvider: "unsure",
       servicesInterested: [],
-      fullName: "",
-      email: "",
-      phone: "",
+      customerName: "",
+      customerEmail: "",
+      customerPhone: "",
       companyName: "",
       companySize: "",
       industry: "",
@@ -54,8 +58,25 @@ function ScheduleForm() {
 
   const onSubmit = (values: z.infer<typeof scheduleFormSchema>) => {
     console.log("values", values);
-    // Handle form submission here
-    alert("Consultation request submitted successfully!");
+    setIsLoading(true);
+    axios
+      .post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/bookings`, values)
+      .then((res) => {
+        console.log("res", res);
+        if (res.status === 200 || res.status === 201) {
+          toast.success(
+            "Thank you for your interest! We will get back to you soon!"
+          );
+          form.reset();
+        } else {
+          toast.error("Something went wrong!");
+        }
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        setIsLoading(false);
+        toast.error("Something went wrong!");
+      });
   };
 
   const services = [
@@ -119,7 +140,7 @@ function ScheduleForm() {
               <div className="grid md:grid-cols-2 gap-6">
                 <FormField
                   control={form.control}
-                  name="fullName"
+                  name="customerName"
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Full Name</FormLabel>
@@ -137,7 +158,7 @@ function ScheduleForm() {
 
                 <FormField
                   control={form.control}
-                  name="email"
+                  name="customerEmail"
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Email Address</FormLabel>
@@ -158,7 +179,7 @@ function ScheduleForm() {
               <div className="grid md:grid-cols-2 gap-6">
                 <FormField
                   control={form.control}
-                  name="phone"
+                  name="customerPhone"
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Phone Number</FormLabel>
@@ -443,8 +464,9 @@ function ScheduleForm() {
                   type="submit"
                   size="lg"
                   className="text-white bg-blue-600 hover:bg-blue-700 px-8 py-6 rounded-lg font-semibold transition-colors"
+                  disabled={isLoading}
                 >
-                  Schedule Consultation
+                  {isLoading ? "Submitting..." : "Schedule Consultation"}
                 </Button>
               </div>
             </form>
