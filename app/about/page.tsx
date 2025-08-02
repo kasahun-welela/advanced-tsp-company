@@ -1,3 +1,4 @@
+"use client";
 import PageHero from "@/components/common/PageHero";
 import SectionTitle from "@/components/common/SectionTitle";
 import {
@@ -14,6 +15,12 @@ import {
 } from "lucide-react";
 import CTA from "@/components/common/CTA";
 import OurTeam from "@/components/OurTeam";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 function AboutPage() {
   const services = [
@@ -117,7 +124,6 @@ function AboutPage() {
             increasingly digital world."
           />
         </section>
-
         <section>
           <SectionTitle
             title="What We Do"
@@ -145,13 +151,13 @@ function AboutPage() {
             })}
           </div>
         </section>
-
-        <section>
-          <SectionTitle
-            title="Why Choose Us"
-            description="What sets us apart."
-          />
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="md:flex justify-between gap-10">
+          <section>
+            <SectionTitle
+              title="Why Choose Us"
+              description="What sets us apart."
+            />
+            {/* <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {reasons.map((item, idx) => {
               const Icon = item.icon;
               return (
@@ -170,16 +176,38 @@ function AboutPage() {
                   </p>
                 </div>
               );
-            })}
           </div>
-        </section>
+          */}
 
-        <section>
-          <SectionTitle
-            title="Our Values"
-            description="Principles that guide us."
-          />
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Carousel plugins={[Autoplay({ delay: 3000 })]}>
+              <CarouselContent className="transition-transform duration-2000 ease-in-out">
+                {reasons.map((item, idx) => {
+                  const Icon = item.icon;
+                  return (
+                    <CarouselItem key={idx} className="basis-full">
+                      <div className="p-6 bg-card rounded-2xl shadow-md hover:shadow-xl transition-transform transform hover:scale-105 text-center max-w-md mx-auto">
+                        <div className="w-14 h-14 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full flex items-center justify-center mb-4 mx-auto">
+                          <Icon className="w-6 h-6 text-white" />
+                        </div>
+                        <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                          {item.title}
+                        </h4>
+                        <p className="text-gray-600 dark:text-gray-300">
+                          {item.description}
+                        </p>
+                      </div>
+                    </CarouselItem>
+                  );
+                })}
+              </CarouselContent>
+            </Carousel>
+          </section>
+          <section>
+            <SectionTitle
+              title="Our Values"
+              description="Principles that guide us."
+            />
+            {/* <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((item, idx) => {
               const Icon = item.icon;
               return (
@@ -199,8 +227,38 @@ function AboutPage() {
                 </div>
               );
             })}
-          </div>
-        </section>
+          </div> */}
+            <Carousel
+              plugins={[
+                Autoplay({
+                  delay: 3000,
+                }),
+              ]}
+              className="w-full max-w-4xl mx-auto"
+            >
+              <CarouselContent>
+                {values.map((item, idx) => {
+                  const Icon = item.icon;
+                  return (
+                    <CarouselItem key={idx} className="basis-full">
+                      <div className="p-6 bg-card rounded-2xl shadow-md hover:shadow-xl transition-transform transform hover:scale-105 text-center max-w-md mx-auto">
+                        <div className="w-14 h-14 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full flex items-center justify-center mb-4 mx-auto">
+                          <Icon className="w-6 h-6 text-white" />
+                        </div>
+                        <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                          {item.title}
+                        </h4>
+                        <p className="text-gray-600 dark:text-gray-300">
+                          {item.description}
+                        </p>
+                      </div>
+                    </CarouselItem>
+                  );
+                })}
+              </CarouselContent>
+            </Carousel>
+          </section>
+        </div>
 
         <SectionTitle
           title="Our Commitment to Your Success"
