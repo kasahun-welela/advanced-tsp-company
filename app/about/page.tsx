@@ -13,6 +13,7 @@ import {
   BookOpen,
 } from "lucide-react";
 import CTA from "@/components/common/CTA";
+import OurTeam from "@/components/OurTeam";
 
 function AboutPage() {
   const services = [
@@ -209,6 +210,7 @@ function AboutPage() {
             Whether you're looking to implement a new IT system, improve
             cybersecurity, or migrate to the cloud, we're here to guide you."
         />
+        <OurTeam />
       </div>
       <CTA
         title="Let’s Build the Future Together"
